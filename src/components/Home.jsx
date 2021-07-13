@@ -17,7 +17,7 @@ function Home() {
             How Many Fruits Do I Weigh?
         </Typography>
       </Box>
-        <Button variant="outlined" color="primary" component={Link} to="/calculator">
+        <Button variant="outlined" color="primary" component={Link} to="/my-app/calculator">
           <Typography variant = 'h3'>
           Get Started
           </Typography>
