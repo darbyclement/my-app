@@ -11,7 +11,7 @@ export default class Calculator extends React.Component  {
             showCalc : false,
             watermelon : '',
             apples : '',
-            peaches : ''
+            coconuts : ''
         }
         this.updateInput = this.updateInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,12 +30,17 @@ export default class Calculator extends React.Component  {
         var w = this.state.weight;
         var wa = 0;
         var a = 0;
+        var c = 0;
         while ((w - 20) >= 0) {
             w -= 20;
             wa += 1;
         }
 
-        
+        while ((w - 3) >= 0) {
+            w -= 3;
+            c += 2;
+        }
+
 
         while ((w - 1) >= 0) {
             w -= 1;
@@ -44,6 +49,7 @@ export default class Calculator extends React.Component  {
 
         this.setState({watermelon : wa})
         this.setState({apples : a})
+        this.setState({coconuts : c})
 
     }
 
@@ -71,8 +77,26 @@ export default class Calculator extends React.Component  {
                 {this.state.watermelon ? 
                     <Typography variant = 'h3'>
                         {this.state.watermelon} Watermelon
+                    </Typography> : null}
+
+                {this.state.apples ||  this.state.coconuts ? 
+                    <Typography variant = 'h4'>     
+                    and
                     </Typography> : null
                 }
+
+                {this.state.coconuts ? 
+                    <Typography variant = 'h3'>     
+                    {this.state.coconuts} Coconuts
+                    </Typography> : null
+                }
+
+                {this.state.apples ?  
+                    <Typography variant = 'h4'>     
+                    and
+                    </Typography> : null
+                }
+
                 {this.state.apples ? 
                     <Typography variant = 'h3'>     
                     {this.state.apples} Apples
