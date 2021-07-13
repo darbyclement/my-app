@@ -79,7 +79,7 @@ export default class Calculator extends React.Component  {
                         {this.state.watermelon} Watermelon
                     </Typography> : null}
 
-                {this.state.apples ||  this.state.coconuts ? 
+                {this.state.watermelon && (this.state.apples ||  this.state.coconuts) ? 
                     <Typography variant = 'h4'>     
                     and
                     </Typography> : null
@@ -91,7 +91,7 @@ export default class Calculator extends React.Component  {
                     </Typography> : null
                 }
 
-                {this.state.apples ?  
+                {this.state.coconuts && this.state.apples ?  
                     <Typography variant = 'h4'>     
                     and
                     </Typography> : null
